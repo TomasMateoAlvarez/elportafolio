@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 export default function AboutMe() {
   return (
     <section className="flex flex-col md:flex-row justify-between items-center py-20 px-4 max-w-7xl mx-auto">
