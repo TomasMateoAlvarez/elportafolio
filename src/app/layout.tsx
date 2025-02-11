@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Header from './components/Header'; // Importa el Header
-import IntroSection from './components/IntroSection'; // Importa la nueva sección
-import Projects from './components/Projects'; // Importa la nueva sección
-import AboutMe from './components/AboutMe'; // Importa la nueva sección
-import Contact from './components/Contact'; // Asegúrate de importar el componente
-import Experience from './components/Experience'; // Asegúrate de importar el componente
+import Header from './components/Header'; 
+import IntroSection from './components/IntroSection';
+import Projects from './components/Projects';
+import Contact from './components/Contact'; 
+import Experience from './components/Experience';
+import AboutMe from './components/AboutMe'; 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
