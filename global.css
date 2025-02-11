@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f8f4e9; /* Blanco cremoso */
+    color: #333333; /* Negro fuerte para el texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+  }
+  
+  h1, h2, p {
+    font-family: 'Arial', sans-serif; /* Fuente fuerte y concisa */
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    color: #555; /* Un negro menos fuerte para párrafos */
+  }
+  /* global.css o el archivo donde tengas tus estilos */
+
+/* Efecto de escritura */
+/* Efecto de escritura */
+.typing-effect {
+    display: inline-block;
+    overflow: hidden; /* Oculta el texto fuera del contenedor */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    border-right: 3px solid black; /* Cursor de escritura */
+    animation: typing 3s steps(30) forwards, blink 0.75s step-end infinite;
+  }
+  
+  /* Animación de escritura */
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  /* Animación del cursor parpadeante */
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
