@@ -1,4 +1,4 @@
-export default function AboutMe() {
+export default function About() {
   return (
     <section className="flex flex-col md:flex-row justify-between items-center py-20 px-4 max-w-7xl mx-auto">
       {/* Contenedor izquierdo con efecto de escritura */}
