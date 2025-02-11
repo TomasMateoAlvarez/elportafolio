@@ -6,7 +6,7 @@ import IntroSection from './components/IntroSection';
 import Projects from './components/Projects';
 import Contact from './components/Contact'; 
 import Experience from './components/Experience';
-import AboutMe from './components/AboutMe'; 
+// import AboutMe from './components/AboutMe'; 
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,7 +39,7 @@ export default function RootLayout({
       >
         <Header />
         <IntroSection />
-        <AboutMe />
+        {/* <AboutMe /> */}
         <Projects />
 
         <Experience />
