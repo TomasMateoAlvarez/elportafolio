@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from 'next/link';
 
 export default function Projects() {
   return (
@@ -12,14 +13,23 @@ export default function Projects() {
         <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
           <div className="flex-1 text-left">
             <h1 className="text-5xl font-bold text-black">
-              Project 1: <br /> Selfcare
+              Project 1: <br /> 
+              <Link
+  href="https://selfcareuy.vercel.app/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-lg font-semibold hover:text-blue-500 transition-colors"
+>
+  Selfcare
+</Link>
+
             </h1>
             <p>
               I have been working on a landing page for a local business, where we are looking to grow the audience, lorem ipsum.
             </p>
           </div>
           <div className="flex-1 text-center">
-            <Image src="/window.svg" alt="Selfcare" width={400} height={300} />
+            <Image src="/selfcareproject.png" alt="Selfcare" width={600} height={800} />
           </div>
         </div>
 

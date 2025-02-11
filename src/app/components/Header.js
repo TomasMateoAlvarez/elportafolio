@@ -13,9 +13,9 @@ export default function Header() {
 
       {/* Lista de enlaces alineada a la derecha */}
       <ul className="flex space-x-8">
-        <li><Link href="#projects" className="text-lg font-semibold hover:text-blue-500 transition-colors">Proyectos</Link></li>
-        <li><Link href="#contact" className="text-lg font-semibold hover:text-blue-500 transition-colors">Contacto</Link></li>
-        <li><Link href="#experience" className="text-lg font-semibold hover:text-blue-500 transition-colors">Experiencia & Educacion </Link></li>
+        <li><Link href="#projects" className="text-lg font-semibold hover:text-blue-500 transition-colors">Project</Link></li>
+        <li><Link href="#contact" className="text-lg font-semibold hover:text-blue-500 transition-colors">Contact</Link></li>
+        <li><Link href="#experience" className="text-lg font-semibold hover:text-blue-500 transition-colors">Experience & Education </Link></li>
         
       </ul>
     </nav>

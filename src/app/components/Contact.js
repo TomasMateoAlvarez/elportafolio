@@ -32,6 +32,12 @@ export default function Contact() {
         >
           <FaEnvelope />
         </a>
+        <a
+      href="\mateoalvarez.pdf"          // Ruta relativa al archivo en la carpeta public
+      download="Mateo_Alvarez_Resume.pdf"  // Nombre con el que se descargará el archivo
+      className="bg-black-300 hover:bg-blue-600 text-black font-semibold py-2 px-4 rounded transition-colors"
+    >
+Resume    </a>
       </div>
     </section>
   );

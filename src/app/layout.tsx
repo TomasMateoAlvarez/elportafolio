@@ -37,13 +37,14 @@ export default function RootLayout({
         }}
       >
         <Header />
-        <Me />
         <IntroSection />
+        <Me />
         <Projects />
 
         <Experience />
 
         <Contact />
+        
 
         <main className="flex justify-center items-center h-full">
           {children} {/* Este es el contenido principal */}

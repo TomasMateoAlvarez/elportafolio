@@ -4,7 +4,7 @@ export default function Me(){
     {/* Contenedor izquierdo con efecto de escritura */}
     <div className="flex-1 text-left">
       <h1 className="text-5xl font-bold text-black typing-effect">
-        Who I Am?
+        Who am I ?
       </h1>
     </div>
 
