@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: 'Mateo Álvarez - Portafolio',
-  description: 'Desarrollador FullStack | Entusiasta del código',
+  description: 'Dev JR',
 };
 
 export default function RootLayout({
