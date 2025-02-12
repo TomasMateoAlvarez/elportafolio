@@ -1,11 +1,11 @@
 export default function ExperienciaYEducacion() {
     return (
       <section id="experience" className="py-20 px-4 max-w-7xl mx-auto space-y-20">
-        <h2 className="text-4xl font-bold text-black text-center">Experiencia y Educación</h2>
+        <h2 className="text-4xl font-bold text-black text-center"> Experience and Education </h2>
   
         {/* Línea de Tiempo de Experiencia */}
         <div className="space-y-12">
-          <h3 className="text-3xl font-semibold text-black">Experiencia Laboral</h3>
+          <h3 className="text-3xl font-semibold text-black">Work Experience</h3>
           <div className="relative pl-6">
             <div className="absolute left-0 top-0 h-full border-l-2 border-gray-300"></div>
   
@@ -46,7 +46,7 @@ chargebacks, data analysis.
   
         {/* Línea de Tiempo de Educación */}
         <div className="space-y-12">
-          <h3 className="text-3xl font-semibold text-black">Educación</h3>
+          <h3 className="text-3xl font-semibold text-black">Education</h3>
           <div className="relative pl-6">
             <div className="absolute left-0 top-0 h-full border-l-2 border-gray-300"></div>
   
@@ -98,11 +98,11 @@ chargebacks, data analysis.
   
         {/* Sección de Idiomas */}
         <div className="space-y-12">
-          <h3 className="text-3xl font-semibold text-black">Idiomas</h3>
+          <h3 className="text-3xl font-semibold text-black">Languages</h3>
           <div className="space-y-4">
             <div className="flex space-x-6">
-              <div className="text-lg font-medium text-gray-700">Español - Nativo</div>
-              <div className="text-lg font-medium text-gray-700">Inglés - C1</div>
+              <div className="text-lg font-medium text-gray-700">Spanish - Native</div>
+              <div className="text-lg font-medium text-gray-700">English - C1</div>
             </div>
           </div>
         </div>
