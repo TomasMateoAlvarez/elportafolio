@@ -29,25 +29,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        style={{
-          backgroundColor: "#f8f4e9", // Blanco cremoso
-          color: "#333333", // Texto negro fuerte
-        }}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Header />
         <IntroSection />
         <Me />
         <Projects />
-
         <Experience />
-
         <Contact />
-        
 
-        <main className="flex justify-center items-center h-full">
-          {children} {/* Este es el contenido principal */}
+        <main>
+          {children}
         </main>
       </body>
     </html>
