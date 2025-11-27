@@ -1,17 +1,23 @@
+'use client'
+
 import Image from "next/image";
 import Link from 'next/link';
+import { useLanguage } from '../contexts/LanguageContext';
+import { useTranslations } from '../translations/translations';
 
 export default function Projects() {
+  const { language } = useLanguage();
+  const translations = useTranslations();
   return (
     <section id="projects" className="section-spacing bg-gray-50">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Featured Projects
+            {translations[language].featuredProjects}
           </h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto mb-4"></div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            A selection of my recent work showcasing my skills in web development and design.
+            {translations[language].projectsSubtitle}
           </p>
         </div>
 
@@ -22,19 +28,18 @@ export default function Projects() {
               <div className="p-8 md:p-12 flex flex-col justify-center">
                 <div className="mb-4">
                   <span className="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">
-                    Web Development
+                    {translations[language].webDevelopment}
                   </span>
                 </div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                  SelfCare Landing Page
+                  {translations[language].selfcareTitle}
                 </h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  A modern landing page designed for a local wellness business. Built with React and Next.js,
-                  featuring responsive design, smooth animations, and optimized performance to help grow their audience.
+                  {translations[language].selfcareDescription}
                 </p>
 
                 <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-gray-900 mb-2">Technologies Used:</h4>
+                  <h4 className="text-sm font-semibold text-gray-900 mb-2">{translations[language].technologiesUsed}</h4>
                   <div className="flex flex-wrap gap-2">
                     <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">React</span>
                     <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Next.js</span>
@@ -50,13 +55,13 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors flex items-center"
                   >
-                    <span>Live Demo</span>
+                    <span>{translations[language].liveDemo}</span>
                     <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
                   </Link>
                   <button className="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
-                    View Code
+                    {translations[language].viewCode}
                   </button>
                 </div>
               </div>
@@ -73,6 +78,118 @@ export default function Projects() {
             </div>
           </div>
 
+          {/* Project 2 - Demicheri Fitness */}
+          <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="grid md:grid-cols-2 gap-0">
+              <div className="relative h-64 md:h-auto order-2 md:order-1">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-pink-500 opacity-10"></div>
+                <Image
+                  src="/demicheri.png"
+                  alt="Demicheri Fitness Website"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              <div className="p-8 md:p-12 flex flex-col justify-center order-1 md:order-2">
+                <div className="mb-4">
+                  <span className="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">
+                    {translations[language].ecommerceCoaching}
+                  </span>
+                </div>
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                  {translations[language].demicheriTitle}
+                </h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  {translations[language].demicheriDescription}
+                </p>
+
+                <div className="mb-6">
+                  <h4 className="text-sm font-semibold text-gray-900 mb-2">{translations[language].technologiesUsed}</h4>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">WordPress</span>
+                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">WooCommerce</span>
+                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Elementor</span>
+                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Custom CSS</span>
+                  </div>
+                </div>
+
+                <div className="flex space-x-4">
+                  <Link
+                    href="https://demicherifitness.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-purple-700 transition-colors flex items-center"
+                  >
+                    <span>{translations[language].liveDemo}</span>
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </Link>
+                  <button className="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+                    {translations[language].viewDetails}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Project 3 - Car Rental */}
+          <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+            <div className="grid md:grid-cols-2 gap-0">
+              <div className="p-8 md:p-12 flex flex-col justify-center">
+                <div className="mb-4">
+                  <span className="bg-green-100 text-green-800 text-sm font-semibold px-3 py-1 rounded-full">
+                    {translations[language].frontendApplication}
+                  </span>
+                </div>
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                  {translations[language].carrentalTitle}
+                </h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  {translations[language].carrentalDescription}
+                </p>
+
+                <div className="mb-6">
+                  <h4 className="text-sm font-semibold text-gray-900 mb-2">{translations[language].technologiesUsed}</h4>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">React</span>
+                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Next.js</span>
+                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">TypeScript</span>
+                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Vercel</span>
+                  </div>
+                </div>
+
+                <div className="flex space-x-4">
+                  <Link
+                    href="https://carrental-frontendv3.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-green-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-700 transition-colors flex items-center"
+                  >
+                    <span>{translations[language].liveDemo}</span>
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </Link>
+                  <button className="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+                    {translations[language].viewCode}
+                  </button>
+                </div>
+              </div>
+
+              <div className="relative h-64 md:h-auto">
+                <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-teal-500 opacity-10"></div>
+                <Image
+                  src="/carrental.png"
+                  alt="Car Rental Platform"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
           {/* Coming Soon Projects */}
           <div className="text-center py-16">
             <div className="bg-white rounded-2xl p-12 shadow-lg">
@@ -81,10 +198,9 @@ export default function Projects() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">More Projects Coming Soon</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">{translations[language].moreProjectsTitle}</h3>
               <p className="text-gray-600 max-w-md mx-auto">
-                I'm constantly working on new projects. Check back soon for more examples of my work,
-                including e-commerce platforms, mobile applications, and enterprise solutions.
+                {translations[language].moreProjectsDescription}
               </p>
             </div>
           </div>

@@ -7,6 +7,7 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Experience from './components/Experience';
 import Me from './components/Me';
+import { LanguageProvider } from './contexts/LanguageContext';
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -30,16 +31,18 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Header />
-        <IntroSection />
-        <Me />
-        <Projects />
-        <Experience />
-        <Contact />
+        <LanguageProvider>
+          <Header />
+          <IntroSection />
+          <Me />
+          <Projects />
+          <Experience />
+          <Contact />
 
-        <main>
-          {children}
-        </main>
+          <main>
+            {children}
+          </main>
+        </LanguageProvider>
       </body>
     </html>
   );
