@@ -1,217 +1,297 @@
 export const translations = {
   es: {
-    // Header/Navigation
-    home: 'Inicio',
-    about: 'Sobre mí',
-    projects: 'Proyectos',
-    experience: 'Experiencia',
-    contact: 'Contacto',
+    nav: { services: 'Servicios', cases: 'Casos', process: 'Cómo trabajo', about: 'Sobre mí', contact: 'Contacto', cta: 'Escribime' },
+    skip: 'Saltar al contenido',
 
-    // Intro Section
-    typingPhrases: [
-      "Desarrollador Full-Stack",
-      "Solucionador de Problemas",
-      "Entusiasta de la Tecnología",
-      "Buscando nuevos desafíos"
-    ],
-    introDescription: 'Estudiante de Ciencias de la Computación apasionado por crear soluciones innovadoras. Especializado en React, Node.js y tecnologías web modernas.',
-    viewMyWork: 'Ver Mi Trabajo',
-    getInTouch: 'Contactame',
+    hero: {
+      title: 'Automatizo procesos manuales y construyo software a medida para tu empresa.',
+      proof: 'Desarrollador full stack y consultor de integración. Automatizo procesos y creo productos digitales a medida: sitios web, aplicaciones y backends, con experiencia trabajando con equipos de negocio en clientes reales.',
+      primary: 'Escribime por WhatsApp',
+      secondary: 'Ver casos reales',
+      beforeTitle: 'Hoy',
+      afterTitle: 'Con un sistema',
+      rows: [
+        { before: 'Pasar datos de una planilla a otra a mano', after: 'Los datos se mueven solos entre tus sistemas' },
+        { before: 'Reportes armados el último día del mes', after: 'Reportes listos, siempre actualizados' },
+        { before: 'Pedidos y consultas por mensajes sueltos', after: 'Un solo lugar con estado y responsable' },
+        { before: 'Un ERP que no habla con el resto', after: 'Integraciones entre ERP, CRM y planillas' },
+      ],
+    },
 
-    // About/Me Section
-    aboutMe: 'Sobre Mí',
-    aboutDescription1: 'Nacido y criado en Uruguay, soy un estudiante entusiasta de Ciencias de la Computación con una pasión por el aprendizaje continuo y la innovación.',
-    aboutDescription2: 'Reconocido por mis sólidas habilidades organizacionales, profesionalismo y adaptabilidad, soy un aprendiz rápido que prospera en entornos dinámicos.',
-    aboutDescription3: 'Siempre dispuesto a abrazar nuevas oportunidades, me esfuerzo por contribuir positivamente a cualquier equipo mientras entrego soluciones de alta calidad.',
-    quickFacts: 'Datos Rápidos',
-    yearsExperience: 'Años de Experiencia',
-    projectsCompleted: 'Proyectos Completados',
-    englishLevel: 'Nivel de Inglés',
-    availability: 'Disponibilidad',
-    fullStackDeveloper: 'Desarrollador Full-Stack',
+    services: {
+      title: 'Qué hago por tu empresa',
+      intro: 'Cuatro formas de trabajo, según dónde duela más.',
+      items: [
+        {
+          name: 'Automatización de procesos',
+          text: 'Tomo una tarea repetitiva que hoy hace una persona y la convierto en un flujo que corre solo. Con IA cuando aporta, sin IA cuando no hace falta.',
+          example: 'Carga de datos, conciliaciones, reportes, avisos a clientes.',
+        },
+        {
+          name: 'Integraciones',
+          text: 'Conecto las herramientas que ya usás para que dejen de depender de copiar y pegar: ERP, CRM, planillas y APIs de terceros.',
+          example: 'Sincronizar pedidos, stock o clientes entre sistemas.',
+        },
+        {
+          name: 'Productos digitales a medida',
+          text: 'Sitios web, aplicaciones, frontend y backend pensados para tu forma de trabajar, de punta a punta y listos para producción. Incluye backends específicos para resolver un problema puntual de tu negocio.',
+          example: 'Sitios y landings, portales de clientes, paneles internos, APIs.',
+        },
+        {
+          name: 'Mantenimiento y evolución',
+          text: 'Lo que construyo queda funcionando, desplegado y documentado. Después lo cuido y lo hago crecer a medida que tu negocio cambia.',
+          example: 'Despliegue, monitoreo, correcciones y nuevas funciones.',
+        },
+      ],
+    },
 
-    // Projects Section
-    featuredProjects: 'Proyectos Destacados',
-    projectsSubtitle: 'Una selección de mi trabajo reciente mostrando mis habilidades en desarrollo web y diseño.',
+    cases: {
+      title: 'Trabajo en producción',
+      intro: 'Proyectos reales en producción. Los nombres de las empresas se mantienen en reserva.',
+      problemLabel: 'El problema',
+      builtLabel: 'Lo que construí',
+      resultLabel: 'Resultado',
+      items: [
+        {
+          tag: 'Desarrollo a medida',
+          title: 'Plataforma de gestión para una empresa de alquiler de autos',
+          flow: ['Alta del vehículo', 'Reserva', 'Entrega y devolución', 'Mantenimiento'],
+          problem: 'Controlar el ciclo completo de cada vehículo, de la reserva a la devolución, en un solo lugar.',
+          built: 'Aplicación web y backend que cubren todo el ciclo de vida del vehículo.',
+          result: 'Una plataforma única, en uso en producción.',
+          stack: ['React', 'Next.js', 'Spring Boot'],
+        },
+        {
+          tag: 'Backend con lógica de negocio',
+          title: 'Sistema de envíos para una empresa de delivery local',
+          flow: ['Ingreso', 'Depósito', 'Estimación de entrega', 'Aviso al remitente'],
+          problem: 'Seguir cada paquete desde que ingresa al depósito hasta que se entrega, y avisarle a quien lo envía.',
+          built: 'Backend que registra el ingreso, sigue el paquete en depósito, estima el tiempo de entrega, calcula el costo del envío y notifica al remitente.',
+          result: 'Seguimiento y notificaciones automáticas en lugar de consultas manuales.',
+          stack: ['Spring Boot', 'Node.js', 'SQL'],
+        },
+        {
+          tag: 'Integración de datos',
+          title: 'Datos de planificación SAP IBP en 5 clientes',
+          flow: ['Origen', 'Integración', 'Validación', 'Monitoreo'],
+          problem: 'Que los datos de planificación lleguen completos y correctos, y que los usuarios de negocio puedan confiar en ellos.',
+          built: 'Integración, validación y monitoreo de cargas de datos, con diagnóstico de fallas y acompañamiento al equipo de negocio.',
+          result: 'Cargas monitoreadas y problemas resueltos antes de que lleguen al usuario.',
+          stack: ['SAP IBP', 'SAP BTP', 'SQL'],
+        },
+        {
+          tag: 'Automatización',
+          title: 'Limpieza y análisis de datos entre equipos',
+          flow: ['Datos sueltos', 'Limpieza', 'Datos listos', 'Análisis compartido'],
+          problem: 'Datos desordenados que cada equipo corregía y analizaba por su cuenta.',
+          built: 'Flujos en Python que limpian los datos y los dejan listos para el análisis compartido, desplegados con Docker.',
+          result: 'Una misma fuente limpia para varios equipos.',
+          stack: ['Python', 'Docker', 'PostgreSQL'],
+        },
+      ],
+      moreTitle: 'Sitios y apps propias',
+      more: [
+        { title: 'Forjapp', text: 'App web e iOS para registrar entrenamientos y peso, con gráficas de evolución por ejercicio.', href: 'https://forjapp-two.vercel.app/' },
+        { title: 'SelfCare', text: 'Landing para un negocio local de bienestar.', href: 'https://selfcareuy.vercel.app/' },
+        { title: 'Demicheri Fitness', text: 'Sitio y tienda online para venta de planes de entrenamiento.', href: 'https://demicherifitness.com/' },
+      ],
+      visit: 'Visitar',
+    },
 
-    // Project 1 - SelfCare
-    selfcareTitle: 'SelfCare Landing Page',
-    selfcareDescription: 'Una landing page moderna diseñada para un negocio de bienestar local. Construida con React y Next.js, con diseño responsive, animaciones suaves y rendimiento optimizado para ayudar a hacer crecer su audiencia.',
+    process: {
+      title: 'Cómo trabajamos',
+      steps: [
+        { t: 'Charla de 20 minutos', d: 'Me contás cómo se hace hoy el proceso. Sin costo y sin compromiso.' },
+        { t: 'Propuesta cerrada', d: 'Te digo qué voy a hacer, en qué plazo y cuánto cuesta, antes de empezar.' },
+        { t: 'Entregas cortas', d: 'Vas viendo avances funcionando cada pocos días, no una sorpresa al final.' },
+        { t: 'Puesta en marcha', d: 'Lo dejo andando, documentado y con soporte para que tu equipo lo use con tranquilidad.' },
+      ],
+    },
 
-    // Project 2 - Demicheri Fitness
-    demicheriTitle: 'Demicheri Fitness',
-    demicheriDescription: 'Un sitio web completo para coaching de running con planes de entrenamiento personalizados. Incluye tienda online integrada con WooCommerce para la venta de planes digitales y sistema de gestión de clientes para entrenamiento personalizado.',
+    about: {
+      title: 'Quién va a trabajar en tu proyecto',
+      photoAlt: 'Mateo Álvarez',
+      paragraphs: [
+        'Soy Mateo, desarrollador full stack de Uruguay. Construyo backends, APIs y aplicaciones web que hoy sostienen operaciones de empresas reales.',
+        'En paralelo trabajo como consultor de integración y SAP IBP, en contacto directo con equipos de negocio de distintos clientes. Por eso no me quedo en lo técnico: entiendo qué necesita cada área y asumo la responsabilidad del resultado, desde la definición hasta la puesta en marcha.',
+        'Hablás directo conmigo, desde la primera charla hasta la entrega.',
+      ],
+      stackTitle: 'Con qué trabajo',
+      stack: [
+        { g: 'Backend', v: 'Spring Boot, Node.js, APIs REST, PostgreSQL' },
+        { g: 'Frontend', v: 'React, Next.js, TypeScript' },
+        { g: 'Automatización', v: 'Python, SQL, Docker' },
+        { g: 'Nube y datos', v: 'AWS, Azure, Kubernetes, Grafana, ElasticSearch' },
+        { g: 'SAP', v: 'SAP IBP, CI-DS, S/4HANA, BTP' },
+      ],
+      trackTitle: 'Roles',
+      track: [
+        'Desarrollador full stack',
+        'Consultor de integración y SAP IBP',
+      ],
+      langs: 'Español nativo · Inglés C1',
+    },
 
-    // Project 3 - Car Rental
-    carrentalTitle: 'Car Rental Platform',
-    carrentalDescription: 'Aplicación web moderna para alquiler de vehículos con interfaz intuitiva y responsive. Incluye sistema de búsqueda de autos, filtros avanzados, gestión de reservas y experiencia de usuario optimizada para facilitar el proceso de alquiler.',
+    contact: {
+      title: 'Contame qué proceso te está haciendo perder tiempo',
+      text: 'Escribime unas líneas y te respondo con una idea concreta de cómo resolverlo. Sin costo para la primera charla.',
+      whatsapp: 'Escribime por WhatsApp',
+      email: 'O por email',
+      cv: 'Descargar CV',
+      hours: 'Respondo en el día, de lunes a viernes.',
+      location: 'Montevideo, Uruguay · trabajo en forma remota con toda la región',
+    },
 
-    // Project tags
-    webDevelopment: 'Desarrollo Web',
-    ecommerceCoaching: 'E-commerce & Coaching',
-    frontendApplication: 'Aplicación Frontend',
-
-    // Common buttons
-    liveDemo: 'Demo en Vivo',
-    viewCode: 'Ver Código',
-    viewDetails: 'Ver Detalles',
-
-    // Technologies
-    technologiesUsed: 'Tecnologías Utilizadas:',
-
-    // Coming Soon
-    moreProjectsTitle: 'Más Proyectos Próximamente',
-    moreProjectsDescription: 'Estoy trabajando constantemente en nuevos proyectos. Vuelve pronto para ver más ejemplos de mi trabajo, incluyendo plataformas de e-commerce, aplicaciones móviles y soluciones empresariales.',
-
-    // Experience Section
-    experienceEducation: 'Experiencia & Educación',
-    workExperience: 'Experiencia Laboral',
-    education: 'Educación',
-    technicalSkills: 'Habilidades Técnicas',
-    languages: 'Idiomas',
-    current: 'Actual',
-    native: 'Nativo',
-    spanish: 'Español',
-    english: 'Inglés',
-
-    // Job Titles and Descriptions
-    sapConsultant: 'Consultor SAP IBP',
-    sapDescription: 'Proporcioné soporte técnico para sistemas y software de clientes. Respondí a consultas de usuarios, solucionando problemas complejos con soluciones empresariales.',
-    networkAdmin: 'Administrador de Redes & Soporte TI',
-    networkDescription: 'Gestioné infraestructura de red y proporcioné soporte TI integral. Mantuve la seguridad del sistema y optimicé el rendimiento para la eficiencia organizacional.',
-    fraudPreventionist: 'Especialista en Prevención de Fraude',
-    fraudDescription: 'Analicé cuentas bancarias e identifiqué patrones de movimiento, devoluciones de cargo y realicé análisis de datos integral para prevenir actividades fraudulentas.',
-
-    // Education
-    bachelorDegree: 'Licenciatura en Ciencias de la Computación',
-    bachelorDescription: 'Currículum integral enfocado en desarrollo de software, bases de datos, metodologías de testing y arquitectura de redes.',
-    reactBootcamp: 'Bootcamp de Desarrollo React.JS',
-    bootcampDescription: 'Entrenamiento intensivo en desarrollo web moderno con énfasis en React, Node.js y desarrollo JavaScript full-stack.',
-
-    // Contact Section
-    letsWorkTogether: 'Trabajemos Juntos',
-    contactSubtitle: '¿Listo para dar vida a tus ideas? Estoy disponible para nuevas oportunidades y proyectos emocionantes. Hablemos sobre cómo podemos trabajar juntos.',
-    getInTouchTitle: 'Ponte en Contacto',
-    email: 'Email',
-    location: 'Ubicación',
-    montevideoUruguay: 'Montevideo, Uruguay',
-    availabilityTitle: 'Disponibilidad',
-    remoteOpportunities: 'Abierto a oportunidades remotas mundialmente',
-    connectWithMe: 'Conéctate Conmigo',
-    readyToStart: '¿Listo para Comenzar un Proyecto?',
-    contactDescription: 'Actualmente estoy disponible para trabajo freelance y oportunidades de tiempo completo. Ya sea que necesites una aplicación web completa, una landing page o consultoría técnica, estoy aquí para ayudar.',
-    sendEmail: 'Envíame un Email',
-    downloadResume: 'Descargar Mi CV',
-    responseTime: 'Tiempo de respuesta: Generalmente dentro de 24 horas',
-    footerText: '© 2024 Mateo Álvarez. Construido con Next.js y Tailwind CSS.',
+    footer: 'Mateo Álvarez',
+    notFound: { title: 'Esta página no existe', text: 'Puede que el enlace esté roto o que la página se haya movido.', back: 'Volver al inicio' },
   },
 
   en: {
-    // Header/Navigation
-    home: 'Home',
-    about: 'About',
-    projects: 'Projects',
-    experience: 'Experience',
-    contact: 'Contact',
+    nav: { services: 'Services', cases: 'Work', process: 'How I work', about: 'About', contact: 'Contact', cta: 'Message me' },
+    skip: 'Skip to content',
 
-    // Intro Section
-    typingPhrases: [
-      "Full-Stack Developer",
-      "Problem Solver",
-      "Tech Enthusiast",
-      "Looking for new challenges"
-    ],
-    introDescription: 'Computer Science student passionate about creating innovative solutions. Specialized in React, Node.js, and modern web technologies.',
-    viewMyWork: 'View My Work',
-    getInTouch: 'Get In Touch',
+    hero: {
+      title: 'I automate manual processes and build custom software for your company.',
+      proof: 'Full-stack developer and integration consultant. I automate processes and build custom digital products: websites, apps and backends, with experience working with business teams at real clients.',
+      primary: 'Message me on WhatsApp',
+      secondary: 'See real work',
+      beforeTitle: 'Today',
+      afterTitle: 'With a system',
+      rows: [
+        { before: 'Copying data from one spreadsheet to another by hand', after: 'Data moves between your systems on its own' },
+        { before: 'Reports assembled on the last day of the month', after: 'Reports ready and always up to date' },
+        { before: 'Orders and requests scattered across messages', after: 'One place with status and owner' },
+        { before: 'An ERP that does not talk to anything else', after: 'Integrations across ERP, CRM and spreadsheets' },
+      ],
+    },
 
-    // About/Me Section
-    aboutMe: 'About Me',
-    aboutDescription1: 'Born and raised in Uruguay, I am an enthusiastic Computer Science student with a passion for continuous learning and innovation.',
-    aboutDescription2: 'Recognized for my strong organizational skills, professionalism, and adaptability, I am a quick learner who thrives in dynamic environments.',
-    aboutDescription3: 'Always eager to embrace new opportunities, I strive to contribute positively to any team while delivering high-quality solutions.',
-    quickFacts: 'Quick Facts',
-    yearsExperience: 'Years Experience',
-    projectsCompleted: 'Projects Completed',
-    englishLevel: 'English Level',
-    availability: 'Availability',
-    fullStackDeveloper: 'Full-Stack Developer',
+    services: {
+      title: 'What I do for your company',
+      intro: 'Four ways to work together, depending on where it hurts most.',
+      items: [
+        {
+          name: 'Process automation',
+          text: 'I take a repetitive task that a person does today and turn it into a flow that runs on its own. With AI when it helps, without it when it does not.',
+          example: 'Data entry, reconciliations, reports, customer notifications.',
+        },
+        {
+          name: 'Integrations',
+          text: 'I connect the tools you already use so they stop relying on copy and paste: ERP, CRM, spreadsheets and third-party APIs.',
+          example: 'Sync orders, stock or customers between systems.',
+        },
+        {
+          name: 'Custom digital products',
+          text: 'Websites, apps, frontend and backend built around how you work, end to end and production ready. Includes purpose-built backends to solve a specific problem in your business.',
+          example: 'Sites and landing pages, customer portals, internal dashboards, APIs.',
+        },
+        {
+          name: 'Maintenance and evolution',
+          text: 'What I build stays running, deployed and documented. Afterwards I look after it and grow it as your business changes.',
+          example: 'Deployment, monitoring, fixes and new features.',
+        },
+      ],
+    },
 
-    // Projects Section
-    featuredProjects: 'Featured Projects',
-    projectsSubtitle: 'A selection of my recent work showcasing my skills in web development and design.',
+    cases: {
+      title: 'Work in production',
+      intro: 'Real projects in production. Company names are kept private.',
+      problemLabel: 'The problem',
+      builtLabel: 'What I built',
+      resultLabel: 'Outcome',
+      items: [
+        {
+          tag: 'Custom development',
+          title: 'Management platform for a car rental company',
+          flow: ['Vehicle intake', 'Booking', 'Handover and return', 'Maintenance'],
+          problem: 'Control the full cycle of every vehicle, from booking to return, in one place.',
+          built: 'A web app and backend covering the entire vehicle lifecycle.',
+          result: 'A single platform, in production use.',
+          stack: ['React', 'Next.js', 'Spring Boot'],
+        },
+        {
+          tag: 'Backend with business logic',
+          title: 'Shipping system for a local delivery company',
+          flow: ['Intake', 'Warehouse', 'Delivery estimate', 'Sender notice'],
+          problem: 'Track every package from warehouse intake to delivery, and keep the sender informed.',
+          built: 'A backend that registers intake, tracks the package in the warehouse, estimates delivery time, calculates shipping cost and notifies the sender.',
+          result: 'Automatic tracking and notifications instead of manual inquiries.',
+          stack: ['Spring Boot', 'Node.js', 'SQL'],
+        },
+        {
+          tag: 'Data integration',
+          title: 'SAP IBP planning data across 5 clients',
+          flow: ['Source', 'Integration', 'Validation', 'Monitoring'],
+          problem: 'Planning data had to arrive complete and correct so business users could trust it.',
+          built: 'Integration, validation and monitoring of data loads, with troubleshooting and support for the business team.',
+          result: 'Monitored loads and issues solved before they reach the user.',
+          stack: ['SAP IBP', 'SAP BTP', 'SQL'],
+        },
+        {
+          tag: 'Automation',
+          title: 'Data cleaning and analysis across teams',
+          flow: ['Scattered data', 'Cleaning', 'Ready data', 'Shared analysis'],
+          problem: 'Messy data that each team fixed and analyzed on its own.',
+          built: 'Python workflows that clean the data and leave it ready for shared analysis, deployed with Docker.',
+          result: 'One clean source for several teams.',
+          stack: ['Python', 'Docker', 'PostgreSQL'],
+        },
+      ],
+      moreTitle: 'Own sites and apps',
+      more: [
+        { title: 'Forjapp', text: 'Web and iOS app to log workouts and body weight, with progress charts per exercise.', href: 'https://forjapp-two.vercel.app/' },
+        { title: 'SelfCare', text: 'Landing page for a local wellness business.', href: 'https://selfcareuy.vercel.app/' },
+        { title: 'Demicheri Fitness', text: 'Website and online store selling training plans.', href: 'https://demicherifitness.com/' },
+      ],
+      visit: 'Visit',
+    },
 
-    // Project 1 - SelfCare
-    selfcareTitle: 'SelfCare Landing Page',
-    selfcareDescription: 'A modern landing page designed for a local wellness business. Built with React and Next.js, featuring responsive design, smooth animations, and optimized performance to help grow their audience.',
+    process: {
+      title: 'How we work',
+      steps: [
+        { t: '20-minute call', d: 'You tell me how the process works today. Free, no commitment.' },
+        { t: 'Fixed proposal', d: 'I tell you what I will do, how long it takes and what it costs, before starting.' },
+        { t: 'Short deliveries', d: 'You see working progress every few days, not a surprise at the end.' },
+        { t: 'Go live', d: 'I leave it running, documented and supported so your team can use it with confidence.' },
+      ],
+    },
 
-    // Project 2 - Demicheri Fitness
-    demicheriTitle: 'Demicheri Fitness',
-    demicheriDescription: 'Complete website for running coaching with personalized training plans. Includes integrated online store with WooCommerce for selling digital plans and client management system for personalized training.',
+    about: {
+      title: 'Who will work on your project',
+      photoAlt: 'Mateo Álvarez',
+      paragraphs: [
+        'I am Mateo, a full-stack developer from Uruguay. I build backends, APIs and web apps that now run real company operations.',
+        'In parallel I work as an integration and SAP IBP consultant, in direct contact with the business teams of different clients. That is why I do not stop at the technical side: I understand what each area needs and take ownership of the result, from definition to go-live.',
+        'You talk directly to me, from the first call to delivery.',
+      ],
+      stackTitle: 'What I work with',
+      stack: [
+        { g: 'Backend', v: 'Spring Boot, Node.js, REST APIs, PostgreSQL' },
+        { g: 'Frontend', v: 'React, Next.js, TypeScript' },
+        { g: 'Automation', v: 'Python, SQL, Docker' },
+        { g: 'Cloud and data', v: 'AWS, Azure, Kubernetes, Grafana, ElasticSearch' },
+        { g: 'SAP', v: 'SAP IBP, CI-DS, S/4HANA, BTP' },
+      ],
+      trackTitle: 'Roles',
+      track: [
+        'Full-stack developer',
+        'Integration and SAP IBP consultant',
+      ],
+      langs: 'Spanish native · English C1',
+    },
 
-    // Project 3 - Car Rental
-    carrentalTitle: 'Car Rental Platform',
-    carrentalDescription: 'Modern web application for vehicle rental with intuitive and responsive interface. Includes car search system, advanced filters, reservation management and optimized user experience to facilitate the rental process.',
+    contact: {
+      title: 'Tell me which process is wasting your time',
+      text: 'Send a few lines and I will reply with a concrete idea of how to solve it. The first call is free.',
+      whatsapp: 'Message me on WhatsApp',
+      email: 'Or by email',
+      cv: 'Download CV',
+      hours: 'I reply the same day, Monday to Friday.',
+      location: 'Montevideo, Uruguay · working remotely across the region',
+    },
 
-    // Project tags
-    webDevelopment: 'Web Development',
-    ecommerceCoaching: 'E-commerce & Coaching',
-    frontendApplication: 'Frontend Application',
-
-    // Common buttons
-    liveDemo: 'Live Demo',
-    viewCode: 'View Code',
-    viewDetails: 'View Details',
-
-    // Technologies
-    technologiesUsed: 'Technologies Used:',
-
-    // Coming Soon
-    moreProjectsTitle: 'More Projects Coming Soon',
-    moreProjectsDescription: 'I\'m constantly working on new projects. Check back soon for more examples of my work, including e-commerce platforms, mobile applications, and enterprise solutions.',
-
-    // Experience Section
-    experienceEducation: 'Experience & Education',
-    workExperience: 'Work Experience',
-    education: 'Education',
-    technicalSkills: 'Technical Skills',
-    languages: 'Languages',
-    current: 'Current',
-    native: 'Native',
-    spanish: 'Spanish',
-    english: 'English',
-
-    // Job Titles and Descriptions
-    sapConsultant: 'SAP IBP Consultant',
-    sapDescription: 'Provided technical support for customer systems and software. Responded to user inquiries, troubleshooting and resolving complex issues with enterprise solutions.',
-    networkAdmin: 'Network Admin & IT Support',
-    networkDescription: 'Managed network infrastructure and provided comprehensive IT support. Maintained system security and optimized performance for organizational efficiency.',
-    fraudPreventionist: 'Fraud Preventionist',
-    fraudDescription: 'Analyzed bank accounts and identified movement patterns, chargebacks, and conducted comprehensive data analysis to prevent fraudulent activities.',
-
-    // Education
-    bachelorDegree: 'Bachelor\'s Degree in Computer Sciences',
-    bachelorDescription: 'Comprehensive curriculum focused on software development, databases, testing methodologies, and network architecture.',
-    reactBootcamp: 'React.JS Development Bootcamp',
-    bootcampDescription: 'Intensive training in modern web development with emphasis on React, Node.js, and full-stack JavaScript development.',
-
-    // Contact Section
-    letsWorkTogether: 'Let\'s Work Together',
-    contactSubtitle: 'Ready to bring your ideas to life? I\'m available for new opportunities and exciting projects. Let\'s discuss how we can work together.',
-    getInTouchTitle: 'Get In Touch',
-    email: 'Email',
-    location: 'Location',
-    montevideoUruguay: 'Montevideo, Uruguay',
-    availabilityTitle: 'Availability',
-    remoteOpportunities: 'Open to remote opportunities worldwide',
-    connectWithMe: 'Connect With Me',
-    readyToStart: 'Ready to Start a Project?',
-    contactDescription: 'I\'m currently available for freelance work and full-time opportunities. Whether you need a complete web application, a landing page, or technical consultation, I\'m here to help.',
-    sendEmail: 'Send Me an Email',
-    downloadResume: 'Download My Resume',
-    responseTime: 'Response time: Usually within 24 hours',
-    footerText: '© 2024 Mateo Álvarez. Built with Next.js and Tailwind CSS.',
-  }
+    footer: 'Mateo Álvarez',
+    notFound: { title: 'This page does not exist', text: 'The link may be broken or the page may have moved.', back: 'Back to home' },
+  },
 }
 
 export function useTranslations() {

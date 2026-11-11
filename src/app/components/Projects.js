@@ -1,211 +1,77 @@
 'use client'
 
-import Image from "next/image";
-import Link from 'next/link';
-import { useLanguage } from '../contexts/LanguageContext';
-import { useTranslations } from '../translations/translations';
+import { useLanguage } from '../contexts/LanguageContext'
+import { useTranslations } from '../translations/translations'
 
 export default function Projects() {
-  const { language } = useLanguage();
-  const translations = useTranslations();
+  const { language } = useLanguage()
+  const t = useTranslations()[language].cases
+
   return (
-    <section id="projects" className="section-spacing bg-gray-50">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            {translations[language].featuredProjects}
-          </h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto mb-4"></div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            {translations[language].projectsSubtitle}
-          </p>
+    <section id="casos" className="section-pad">
+      <div className="container-x">
+        <div className="max-w-2xl">
+          <h2 className="text-3xl font-extrabold tracking-tight md:text-4xl">{t.title}</h2>
+          <p className="mt-4 text-lg text-muted">{t.intro}</p>
         </div>
 
-        <div className="space-y-20">
-          {/* Project 1 - SelfCare */}
-          <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-            <div className="grid md:grid-cols-2 gap-0">
-              <div className="p-8 md:p-12 flex flex-col justify-center">
-                <div className="mb-4">
-                  <span className="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">
-                    {translations[language].webDevelopment}
-                  </span>
-                </div>
-                <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                  {translations[language].selfcareTitle}
-                </h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  {translations[language].selfcareDescription}
-                </p>
-
-                <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-gray-900 mb-2">{translations[language].technologiesUsed}</h4>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">React</span>
-                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Next.js</span>
-                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Tailwind CSS</span>
-                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Vercel</span>
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
+          {t.items.map((c) => (
+            <article key={c.title} className="flex flex-col overflow-hidden rounded-2xl border border-line bg-card">
+              <div className="flex flex-1 flex-col p-7 md:p-9">
+                <p className="text-sm font-semibold text-accent">{c.tag}</p>
+                <h3 className="mt-2 text-xl font-bold leading-snug tracking-tight md:text-2xl">{c.title}</h3>
+                <ol className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-2 text-xs font-semibold text-accent-dark">
+                  {c.flow.map((step, k) => (
+                    <li key={step} className="flex items-center gap-2">
+                      {k > 0 && (
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-muted" aria-hidden="true">
+                          <path d="M5 12h14M13 6l6 6-6 6" />
+                        </svg>
+                      )}
+                      <span className="rounded-md bg-accent-soft px-2.5 py-1">{step}</span>
+                    </li>
+                  ))}
+                </ol>
+                <dl className="mt-6 space-y-4 text-[0.95rem] leading-relaxed">
+                  <div>
+                    <dt className="font-semibold text-ink">{t.problemLabel}</dt>
+                    <dd className="text-muted">{c.problem}</dd>
                   </div>
-                </div>
-
-                <div className="flex space-x-4">
-                  <Link
-                    href="https://selfcareuy.vercel.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors flex items-center"
-                  >
-                    <span>{translations[language].liveDemo}</span>
-                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </Link>
-                  <button className="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
-                    {translations[language].viewCode}
-                  </button>
-                </div>
-              </div>
-
-              <div className="relative h-64 md:h-auto">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-500 opacity-10"></div>
-                <Image
-                  src="/selfcareproject.png"
-                  alt="SelfCare Landing Page"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Project 2 - Demicheri Fitness */}
-          <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-            <div className="grid md:grid-cols-2 gap-0">
-              <div className="relative h-64 md:h-auto order-2 md:order-1">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-pink-500 opacity-10"></div>
-                <Image
-                  src="/demicheri.png"
-                  alt="Demicheri Fitness Website"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-
-              <div className="p-8 md:p-12 flex flex-col justify-center order-1 md:order-2">
-                <div className="mb-4">
-                  <span className="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">
-                    {translations[language].ecommerceCoaching}
-                  </span>
-                </div>
-                <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                  {translations[language].demicheriTitle}
-                </h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  {translations[language].demicheriDescription}
-                </p>
-
-                <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-gray-900 mb-2">{translations[language].technologiesUsed}</h4>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">WordPress</span>
-                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">WooCommerce</span>
-                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Elementor</span>
-                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Custom CSS</span>
+                  <div>
+                    <dt className="font-semibold text-ink">{t.builtLabel}</dt>
+                    <dd className="text-muted">{c.built}</dd>
                   </div>
-                </div>
-
-                <div className="flex space-x-4">
-                  <Link
-                    href="https://demicherifitness.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-purple-700 transition-colors flex items-center"
-                  >
-                    <span>{translations[language].liveDemo}</span>
-                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </Link>
-                  <button className="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
-                    {translations[language].viewDetails}
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Project 3 - Car Rental */}
-          <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-            <div className="grid md:grid-cols-2 gap-0">
-              <div className="p-8 md:p-12 flex flex-col justify-center">
-                <div className="mb-4">
-                  <span className="bg-green-100 text-green-800 text-sm font-semibold px-3 py-1 rounded-full">
-                    {translations[language].frontendApplication}
-                  </span>
-                </div>
-                <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                  {translations[language].carrentalTitle}
-                </h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  {translations[language].carrentalDescription}
-                </p>
-
-                <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-gray-900 mb-2">{translations[language].technologiesUsed}</h4>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">React</span>
-                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Next.js</span>
-                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">TypeScript</span>
-                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Vercel</span>
+                  <div>
+                    <dt className="font-semibold text-ink">{t.resultLabel}</dt>
+                    <dd className="text-muted">{c.result}</dd>
                   </div>
-                </div>
-
-                <div className="flex space-x-4">
-                  <Link
-                    href="https://carrental-frontendv3.vercel.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-green-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-700 transition-colors flex items-center"
-                  >
-                    <span>{translations[language].liveDemo}</span>
-                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </Link>
-                  <button className="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
-                    {translations[language].viewCode}
-                  </button>
-                </div>
+                </dl>
+                <ul className="mt-auto flex flex-wrap gap-2 pt-7">
+                  {c.stack.map((s) => (
+                    <li key={s} className="rounded-md bg-accent-soft px-2.5 py-1 text-xs font-semibold text-accent-dark">
+                      {s}
+                    </li>
+                  ))}
+                </ul>
               </div>
+            </article>
+          ))}
+        </div>
 
-              <div className="relative h-64 md:h-auto">
-                <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-teal-500 opacity-10"></div>
-                <Image
-                  src="/carrental.png"
-                  alt="Car Rental Platform"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Coming Soon Projects */}
-          <div className="text-center py-16">
-            <div className="bg-white rounded-2xl p-12 shadow-lg">
-              <div className="w-20 h-20 bg-gray-100 rounded-full mx-auto mb-6 flex items-center justify-center">
-                <svg className="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">{translations[language].moreProjectsTitle}</h3>
-              <p className="text-gray-600 max-w-md mx-auto">
-                {translations[language].moreProjectsDescription}
-              </p>
-            </div>
-          </div>
+        <h3 className="mt-16 text-xl font-bold tracking-tight">{t.moreTitle}</h3>
+        <div className="mt-5 divide-y divide-line border-y border-line">
+          {t.more.map((m) => (
+            <a key={m.title} href={m.href} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between gap-6 py-5">
+              <span>
+                <span className="block font-semibold text-ink group-hover:text-accent">{m.title}</span>
+                <span className="block text-sm text-muted">{m.text}</span>
+              </span>
+              <span className="shrink-0 text-sm font-semibold text-accent">{t.visit} →</span>
+            </a>
+          ))}
         </div>
       </div>
     </section>
-  );
+  )
 }

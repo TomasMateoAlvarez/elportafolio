@@ -1,68 +1,74 @@
 'use client'
 
-import Link from 'next/link';
-import { useLanguage } from '../contexts/LanguageContext';
-import { useTranslations } from '../translations/translations';
-import LanguageSelector from './LanguageSelector';
+import { useState } from 'react'
+import { useLanguage } from '../contexts/LanguageContext'
+import { useTranslations } from '../translations/translations'
+import LanguageSelector from './LanguageSelector'
+import { waLink } from '../lib/site'
 
 export default function Header() {
-  const { language } = useLanguage();
-  const translations = useTranslations();
+  const { language } = useLanguage()
+  const t = useTranslations()[language]
+  const [open, setOpen] = useState(false)
+
+  const links = [
+    ['#servicios', t.nav.services],
+    ['#casos', t.nav.cases],
+    ['#proceso', t.nav.process],
+    ['#sobre-mi', t.nav.about],
+  ]
+
   return (
-    <header className="sticky top-0 glass-effect z-50 border-b border-gray-100/50">
-      <nav className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        <div className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors cursor-pointer">
-          ma.
-        </div>
+    <header className="sticky top-0 z-50 border-b border-line bg-paper">
+      <a href="#contenido" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:rounded focus:bg-ink focus:px-4 focus:py-2 focus:text-white">
+        {t.skip}
+      </a>
+      <nav className="container-x flex items-center justify-between px-5 py-3.5 md:px-8" aria-label="Principal">
+        <a href="#" className="text-lg font-extrabold tracking-tight text-ink">
+          Mateo Álvarez
+        </a>
 
-        <div className="flex items-center space-x-6">
-          <ul className="hidden md:flex space-x-8">
-            <li>
-              <Link
-                href="#about"
-                className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors relative group"
-              >
-                {translations[language].about}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#projects"
-                className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors relative group"
-              >
-                {translations[language].projects}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#experience"
-                className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors relative group"
-              >
-                {translations[language].experience}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#contact"
-                className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors"
-              >
-                {translations[language].contact}
-              </Link>
-            </li>
-          </ul>
-
+        <div className="hidden items-center gap-7 md:flex">
+          {links.map(([href, label]) => (
+            <a key={href} href={href} className="text-sm font-medium text-muted transition-colors hover:text-ink">
+              {label}
+            </a>
+          ))}
           <LanguageSelector />
+          <a href={waLink(language)} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-accent-dark">
+            {t.nav.cta}
+          </a>
         </div>
 
-        <button className="md:hidden p-2">
-          <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+        <button
+          type="button"
+          className="-mr-2 p-2 md:hidden"
+          aria-expanded={open}
+          aria-controls="menu-movil"
+          aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
+          onClick={() => setOpen(!open)}
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+            {open ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
           </svg>
         </button>
       </nav>
+
+      {open && (
+        <div id="menu-movil" className="border-t border-line bg-paper px-5 pb-6 pt-2 md:hidden">
+          {links.map(([href, label]) => (
+            <a key={href} href={href} onClick={() => setOpen(false)} className="block border-b border-line py-3.5 text-base font-medium text-ink">
+              {label}
+            </a>
+          ))}
+          <div className="flex items-center justify-between pt-5">
+            <LanguageSelector />
+            <a href={waLink(language)} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-white">
+              {t.nav.cta}
+            </a>
+          </div>
+        </div>
+      )}
     </header>
-  );
+  )
 }
