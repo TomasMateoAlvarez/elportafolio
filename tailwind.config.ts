@@ -9,8 +9,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        paper: "#FAF8F4",
+        card: "#FFFFFF",
+        ink: "#16201B",
+        muted: "#4B5A52",
+        line: "#E3DED3",
+        accent: { DEFAULT: "#1E7B54", dark: "#165C3F", soft: "#E4F0E9" },
+      },
+      fontFamily: {
+        sans: ["var(--font-figtree)", "system-ui", "sans-serif"],
       },
     },
   },

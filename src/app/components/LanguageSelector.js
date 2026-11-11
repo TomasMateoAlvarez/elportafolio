@@ -4,31 +4,21 @@ import { useLanguage } from '../contexts/LanguageContext'
 
 export default function LanguageSelector() {
   const { language, changeLanguage } = useLanguage()
+  const base = 'rounded px-2.5 py-1.5 text-xs font-bold tracking-wide transition-colors'
 
   return (
-    <div className="flex space-x-2">
-      <button
-        onClick={() => changeLanguage('es')}
-        className={`p-1 rounded transition-all duration-200 ${
-          language === 'es'
-            ? 'ring-2 ring-blue-500 bg-blue-50'
-            : 'hover:bg-gray-100'
-        }`}
-        title="Español"
-      >
-        <span className="text-lg">🇪🇸</span>
-      </button>
-      <button
-        onClick={() => changeLanguage('en')}
-        className={`p-1 rounded transition-all duration-200 ${
-          language === 'en'
-            ? 'ring-2 ring-blue-500 bg-blue-50'
-            : 'hover:bg-gray-100'
-        }`}
-        title="English"
-      >
-        <span className="text-lg">🇺🇸</span>
-      </button>
+    <div className="flex items-center rounded-lg border border-line" role="group" aria-label="Idioma">
+      {['es', 'en'].map((code) => (
+        <button
+          key={code}
+          type="button"
+          onClick={() => changeLanguage(code)}
+          aria-pressed={language === code}
+          className={`${base} ${language === code ? 'bg-ink text-white' : 'text-muted hover:text-ink'}`}
+        >
+          {code.toUpperCase()}
+        </button>
+      ))}
     </div>
   )
 }
